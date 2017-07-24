@@ -199,7 +199,8 @@ $(document).ready(function(){
         success:function(data){
             if(parseInt(data) == 3){
                 alert("您的登录已超时！");
-                location.href="http://202.61.86.219/Test/lottery/front/login.html";
+                location.href="../login.html";
+                ..../
             }else {
                 console.log(Object.keys(data).length);
                 console.log(data);
