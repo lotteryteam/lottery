@@ -95,10 +95,15 @@ function save_edit(node){
                             //$(raw_url).html(""+url);
                             //$(raw_appid).html(""+appid);
                             //$(raw_type).html(""+type);
-                            $('#dialogBg').fadeOut(300, function () {
-                                $('#dialog').addClass('bounceOutUp').fadeOut();
-                            });
-                            location.reload();
+                            if(parseInt(data) == 3){
+                                alert("您的登录已超时！");
+                                location.href="http://202.61.86.219/Test/lottery/front/login.html";
+                            } else {
+                              $('#dialogBg').fadeOut(300, function () {
+                                  $('#dialog').addClass('bounceOutUp').fadeOut();
+                              });
+                              location.reload();
+                            }
                     },
                     error: function(XMLHttpRequest, textStatus, errorThrown) {
                         alert(XMLHttpRequest.status);
@@ -125,8 +130,13 @@ function del(node){
         dataType:"text",
         data:arr,
         success:function(data){
+          if(parseInt(data) == 3){
+              alert("您的登录已超时！");
+              location.href="http://202.61.86.219/Test/lottery/front/login.html";
+          } else {
             console.log(data);
             location.reload();
+          }
         },
         error: function(XMLHttpRequest, textStatus, errorThrown) {
             alert(XMLHttpRequest.status);
@@ -159,9 +169,12 @@ function addConfig(node){
             dataType:"text",
             data:str,
             success:function(data){
-                if(parseInt(data) == 1){
-                    location.reload();
-                }
+              if(parseInt(data) == 3){
+                  alert("您的登录已超时！");
+                  location.href="http://202.61.86.219/Test/lottery/front/login.html";
+              } else if (parseInt(data) == 1){
+                location.reload();
+              }
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
                 alert(XMLHttpRequest.status);

@@ -12,7 +12,7 @@ $admin = false;
 // 启动会话，这步必不可少
 session_start();
 
-if(!isset($_SESSION['last_access']) || (time()-$_SESSION['last_access'])>60)
+if(!isset($_SESSION['last_access']) || (time()-$_SESSION['last_access'])>6)
 {
   unset($_SESSION['admin']);
 } else {
