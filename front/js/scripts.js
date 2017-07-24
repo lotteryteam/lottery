@@ -8,10 +8,14 @@ function login(){
         return;
     }
 
+    var form = new FormData();
+    form.append("username",username);
+    form.append("password",pass);
+
     $.ajax({
-      type: 'GET',
+      type: 'post',
       url: "../back/login.php",
-      data: "username="+username+'&pass='+pass,
+      data: form,
       dataType: 'text',
       success:function(data){
           alert(data);

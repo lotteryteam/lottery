@@ -2,8 +2,8 @@
 
 ini_set('display_errors', true);
 error_reporting(E_ALL);
-include 'conn.php';
 
+include 'conn.php';
 $username = $_GET['username'];
 $pass = $_GET['pass'];
 
