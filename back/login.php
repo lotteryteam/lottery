@@ -8,7 +8,7 @@ $username = $_GET['username'];
 $pass = $_GET['pass'];
 
 $sql = "select * from admin where username = '$username' and password = '$pass'";
-$result = mysql_query($sql,$con);
+$result = mysql_query($sql);
 if (mysql_num_rows($result) == 0) {
   echo "1";
 } else {
