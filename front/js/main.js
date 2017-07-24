@@ -47,7 +47,7 @@ function edit(node){
     var raw_show_value = $(node).parents("tr").children()[3].innerHTML;
     var raw_url_value = $(node).parents("tr").children()[1].innerHTML;
     var raw_comment_value = $(node).parents("tr").children()[5].innerHTML;
-    
+
 
     $('#appid_input').val(""+raw_appid_value);
     $('#url_input').val(""+raw_url_value);
@@ -64,7 +64,7 @@ function edit(node){
     }
     if(parseInt(raw_show_value) == 0){
         $('#show_input option:eq(1)').attr('selected','selected');
-    }    
+    }
 
     $('#dialogBg').fadeIn(300);
     $('#dialog').removeAttr('class').addClass('animated ' + className + '').fadeIn();
@@ -186,7 +186,7 @@ $(document).ready(function(){
         success:function(data){
             if(parseInt(data) == 3){
                 alert("您的登录已超时！");
-                location.href="http://202.61.86.219/lottery/front/login.html";
+                location.href="http://202.61.86.219/Test/lottery/front/login.html";
             }else {
                 console.log(Object.keys(data).length);
                 console.log(data);

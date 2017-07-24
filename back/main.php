@@ -11,13 +11,22 @@ include 'conn.php';
 $admin = false;
 // 启动会话，这步必不可少
 session_start();
+
+if(!isset($_SESSION['last_access']) || (time()-$_SESSION['last_access'])>6)
+{
+  unset($_SESSION['admin']);
+} else {
+   $_SESSION['last_access'] = time();
+}
+
 // 判断是否登陆
 if (isset($_SESSION['admin']) && $_SESSION['admin'] === true) {
     $admin = true;
-} else {
-// 验证失败，将 $_SESSION["admin"] 置为 false
-    $_SESSION["admin"] = false;
 }
+// else {
+// // 验证失败，将 $_SESSION["admin"] 置为 false
+//     $_SESSION["admin"] = false;
+// }
 
 if($admin == true){
     $sql = "select * from lottery";
