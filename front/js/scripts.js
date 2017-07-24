@@ -12,10 +12,10 @@ function login(){
     $.ajax({
       type: 'GET',
       url: "../back/login.php",
-      data: {username: $username, pass: $pass},
+      data: {username: username, pass: pass},
       dataType: 'text',
       success:function(data){
-        alert(data);
+          alert(data);
           console.log("++++++++++"+data);
           // location.href="http://202.61.86.219/lottery/front/index.html";
       },
