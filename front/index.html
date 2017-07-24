@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>后台管理界面</title>
+    <meta name="description" content="">
+    <meta name="author" content="templatemo">
+
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/templatemo-style.css" rel="stylesheet">
+    <link href="css/common.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        /* Basic Grey */
+        .basic-grey {
+            margin-left:auto;
+            margin-right:auto;
+            max-width: 500px;
+            background: #F7F7F7;
+            padding: 25px 15px 25px 10px;
+            font: 12px Georgia, "Times New Roman", Times, serif;
+            color: #888;
+            text-shadow: 1px 1px 1px #FFF;
+            border:1px solid #E4E4E4;
+        }
+        .basic-grey h1 {
+            font-size: 25px;
+            padding: 0px 0px 10px 40px;
+            display: block;
+            border-bottom:1px solid #E4E4E4;
+            margin: -10px -15px 30px -10px;;
+            color: #888;
+        }
+        .basic-grey h1>span {
+            display: block;
+            font-size: 11px;
+        }
+        .basic-grey label {
+            display: block;
+            margin: 0px;
+        }
+        .basic-grey label>span {
+            float: left;
+            width: 20%;
+            text-align: right;
+            padding-right: 10px;
+            margin-top: 10px;
+            color: #888;
+        }
+        .basic-grey input[type="text"], .basic-grey input[type="email"], .basic-grey textarea, .basic-grey select {
+            border: 1px solid #DADADA;
+            color: #888;
+            height: 30px;
+            margin-bottom: 16px;
+            margin-right: 6px;
+            margin-top: 2px;
+            outline: 0 none;
+            padding: 3px 3px 3px 5px;
+            width: 70%;
+            font-size: 12px;
+            line-height:15px;
+            box-shadow: inset 0px 1px 4px #ECECEC;
+            -moz-box-shadow: inset 0px 1px 4px #ECECEC;
+            -webkit-box-shadow: inset 0px 1px 4px #ECECEC;
+        }
+        .basic-grey textarea{
+            padding: 5px 3px 3px 5px;
+        }
+        .basic-grey select {
+            background: #FFF url('down-arrow.png') no-repeat right;
+            background: #FFF url('down-arrow.png') no-repeat right);
+            appearance:none;
+            -webkit-appearance:none;
+            -moz-appearance: none;
+            text-indent: 0.01px;
+            text-overflow: '';
+            width: 70%;
+            height: 35px;
+            line-height: 25px;
+        }
+        .basic-grey textarea{
+            height:100px;
+        }
+        .basic-grey .button {
+            background: #E27575;
+            border: none;
+            padding: 10px 25px 10px 25px;
+            color: #FFF;
+            box-shadow: 1px 1px 5px #B6B6B6;
+            border-radius: 3px;
+            text-shadow: 1px 1px 1px #9E3F3F;
+            cursor: pointer;
+        }
+        .basic-grey .button:hover {
+            background: #CF7A7A
+        }
+    </style>
+
+
+</head>
+<body>
+<!-- Left column -->
+<div class="templatemo-flex-row">
+<div style="display: none;" id="rocket-to-top">
+<div style="opacity:0;display: block;" class="level-2"></div>
+<div class="level-3"></div>
+</div>
+    <div class="templatemo-sidebar" style="height: 990px">
+        <header class="templatemo-site-header" style="text-align: center">
+            <h1 style="font-size: 25px">lottery</h1>
+        </header>
+        <div class="profile-photo-container" >
+            <img  src="images/profile-photo.jpg" alt="Profile Photo" class="img-responsive">
+            <div class="profile-photo-overlay"></div>
+        </div>
+        <!-- Search box -->
+        <div class="mobile-menu-icon">
+            <i class="fa fa-bars"></i>
+        </div>
+        <nav class="templatemo-left-nav" style="margin-top: 5px">
+            <ul>
+                <li style="font-size: 15px"><a href="#" class="active"><i class="fa fa-home fa-fw"></i>config</a></li>
+            </ul>
+        </nav>
+    </div>
+    <!-- Main content -->
+    <div class="templatemo-content col-1 light-gray-bg">
+        <div class="templatemo-content-widget white-bg">
+
+            <div id="add" class="basic-grey">
+
+                <h1>Add config</h1>
+                <label>
+                    <span>appid :</span>
+                    <input id="add_appid" type="text" name="name" placeholder="输入appid" />
+                </label>
+                <label>
+                    <span>type :</span>
+                    <select name="selection" id="add_type">
+                        <option value="ios">ios</option>
+                        <option value="android">android</option>
+                    </select>
+                </label>
+                <label>
+                    <span>url :</span>
+                    <input id="add_url" type="email" name="email" placeholder="输入url" />
+                </label>
+                <label>
+                    <span>show :</span>
+                    <select name="selection" id="add_show">
+                        <option value="1">true-1</option>
+                        <option value="0">false-0</option>
+                    </select>
+                </label>
+                <label>
+                    <span>comment :</span>
+                    <input id="add_comment" type="email" name="email" placeholder="添加备注" />
+                </label>
+                <label style="text-align: center">
+                    <span>&nbsp;</span>
+                    <input type="button" class="button" value="添加" onclick="addConfig(this)" />
+                </label>
+
+            </div>
+
+
+            <div id="wrapper">
+                <div id="dialogBg"></div>
+                <div id="dialog" class="animated" style="height: 440px">
+                    <img class="dialogIco" width="50" height="50" src="images/ico.png" alt=""/>
+                    <div class="dialogTop">
+                        <a href="javascript:;" class="claseDialogBtn">关闭</a>
+                    </div>
+
+                    <div style="margin-top: 30px;text-align: center" class="">
+                        <label><font>appid</font><input id="appid_input" style="margin-left: 34px;margin-right: 20px" type="text" name="" required class="ipt"/></label>
+                         <label style="display: block;text-align:left">
+                            <font>type</font>
+                            <select id = "type_input"name="type" style="margin-left:39px;margin-top:20px;width:185px">
+                                <option value="ios">ios</option>
+                                <option value="android">android</option>
+                            </select>
+                        </label>
+                        <label><font>url</font><input id="url_input" style="margin-top:20px;margin-left: 54px;margin-right: 20px" type="text" name="" required class="ipt"/></label>
+                        <label style="display: block;text-align:left">
+                            <font>show_url</font>
+                            <select id="show_input" name="show" style="margin-left:10px;margin-top:20px;width:185px">
+                                <option value="1">true-1</option>
+                                <option value="0">false-0</option>
+                            </select>
+                        </label>
+                        <label style="display: block"><font>comment</font><input id="comment_input" style="margin-top:20px;margin-left: 8px;margin-right: 20px" type="text" name="" required class="ipt"/></label>
+                        <button style="margin-top: 30px" class="templatemo-blue-button" onclick="save_edit(this)">保存</button>
+                    </div>
+
+                </div>
+
+            </div>
+            <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+            </div>
+            <div class="templatemo-content-widget no-padding">
+                <div class="panel panel-default table-responsive">
+                    <table class="table table-striped table-bordered templatemo-user-table">
+                        <thead>
+                            <tr>
+                                <td style="text-align: center"><a href="" class="white-text templatemo-sort-by">ID</a></td>
+                                <td style="text-align: center"><a href="" class="white-text templatemo-sort-by">url</a></td>
+                                <td style="text-align: center"><a href="" class="white-text templatemo-sort-by">type</a></td>
+                                <td style="text-align: center"><a href="" class="white-text templatemo-sort-by">show</a></td>
+                                <td style="text-align: center"><a href="" class="white-text templatemo-sort-by url">appid</a></td>
+                                <td style="text-align: center"><a href="" class="white-text templatemo-sort-by url">comment</a></td>
+                                <td style="text-align: center"><a href="" class="white-text templatemo-sort-by show">createAt</a></td>
+                                <td style="text-align: center"><a href="" class="white-text templatemo-sort-by">UpdateAt</a></td>
+                                <td style="text-align: center"><a href="" class="white-text templatemo-sort-by">Operate</a></td>
+                            </tr>
+                        </thead>
+                        <tbody id="cells">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JS -->
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/sucaijiayuan.js"></script>
+
+
+
+</body>
+</html>
