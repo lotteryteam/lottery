@@ -199,7 +199,7 @@ $(document).ready(function(){
         success:function(data){
             if(parseInt(data) == 3){
                 alert("您的登录已超时！");
-                location.href="../login.html";
+                location.href="../front/login.html";
             }else {
                 console.log(Object.keys(data).length);
                 console.log(data);
