@@ -97,7 +97,7 @@ function save_edit(node){
                             //$(raw_type).html(""+type);
                             if(parseInt(data) == 3){
                                 alert("您的登录已超时！");
-                                location.href="http://202.61.86.219/Test/lottery/front/login.html";
+                                location.href="./login.html";
                             } else {
                               $('#dialogBg').fadeOut(300, function () {
                                   $('#dialog').addClass('bounceOutUp').fadeOut();
@@ -132,7 +132,7 @@ function del(node){
         success:function(data){
           if(parseInt(data) == 3){
               alert("您的登录已超时！");
-              location.href="http://202.61.86.219/Test/lottery/front/login.html";
+              location.href="./login.html";
           } else {
             console.log(data);
             location.reload();
@@ -171,7 +171,7 @@ function addConfig(node){
             success:function(data){
               if(parseInt(data) == 3){
                   alert("您的登录已超时！");
-                  location.href="http://202.61.86.219/Test/lottery/front/login.html";
+                  location.href="./login.html";
               } else if (parseInt(data) == 1){
                 location.reload();
               }
