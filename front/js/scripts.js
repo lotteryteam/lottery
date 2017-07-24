@@ -3,7 +3,7 @@ function login(){
     var username = $('#u').val();
     var pass = $('#pass').val();
 
-    if ((username.replace(/(^\s*)|(\s*$)/g, "").length ==0) || (pass.replace(/(^\s*)|(\s*$)/g, "").length ==0)) {
+    if (username == "" || pass == "") {
         alert("账号和密码不能为空！");
     } else {
         alert("账号和密码不为空！");
