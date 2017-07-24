@@ -11,7 +11,7 @@ function login(){
             data:1,
             success:function(data){
                 console.log("++++++++++"+data);
-                location.href="http://202.61.86.219/Test/lottery/front/index.html";
+                location.href="./index.html";
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
                 alert(XMLHttpRequest.status);
