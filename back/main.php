@@ -27,6 +27,7 @@ include 'conn.php';
 $admin = true;
 
 if($admin == true){
+  echo "admin";
     if (isset($_GET['limit']) && isset($_GET['offset']))) {
       $limit = $_GET['limit'];
       $offset = $_GET['offset'];
@@ -36,6 +37,9 @@ if($admin == true){
       $result = mysql_query($sql, $con);
       $array = new ArrayObject(new ArrayObject());
       $i = 0;
+
+      echo $limit;
+      echo $offset;
 
       while($row = mysql_fetch_array($result)){
           $array[$i]["id"] = $row[0]; //id
