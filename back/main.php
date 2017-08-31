@@ -25,7 +25,7 @@ include 'conn.php';
 // }
 
 $admin = true;
-
+echo $admin;
 if($admin == true){
   echo "admin";
     if (isset($_GET['limit']) && isset($_GET['offset']))) {
