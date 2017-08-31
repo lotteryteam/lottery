@@ -60,6 +60,7 @@ while($row = mysql_fetch_array($result)){
 
 $result_count = mysql_query($sql_all_count);
 $row_count = mysql_fetch_row($result_count);
+echo $row_count[0];
 // $all_count = $row_count[0];
 //
 // $json = array("total" => $all_count, "rows" => $array);
