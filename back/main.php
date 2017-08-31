@@ -63,9 +63,9 @@ $row_count = mysql_fetch_row($result_count);
 echo $row_count[0];
 // $all_count = $row_count[0];
 //
-// $json = array("total" => $row_count[0], "rows" => $array);
-// echo json_encode($json)
-print_r($array);
+$json = array("total" => $row_count[0], "rows" => $array);
+echo json_encode($json);
+// print_r($json);
 
 // if (isset($_GET["limit"]) && isset($_GET["offset"])) {
 //   echo "kkk";
