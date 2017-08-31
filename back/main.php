@@ -46,17 +46,17 @@ $i = 0;
 
 echo $sql;
 
-// while($row = mysql_fetch_array($result)){
-//     $array[$i]["id"] = $row[0]; //id
-//     $array[$i]["url"] = $row[1]; //url
-//     $array[$i]["type"] = $row[2]; //type
-//     $array[$i]["show_url"] = $row[3]; //show_url
-//     $array[$i]["appid"] = $row[4]; //appid
-//     $array[$i]["comment"] = $row[5]; //comment
-//     $array[$i]["create"] = $row[6]; //create
-//     $array[$i]["update"] = $row[7]; //update
-//     $i++;
-// }
+while($row = mysql_fetch_array($result)){
+    $array[$i]["id"] = $row[0]; //id
+    $array[$i]["url"] = $row[1]; //url
+    $array[$i]["type"] = $row[2]; //type
+    $array[$i]["show_url"] = $row[3]; //show_url
+    $array[$i]["appid"] = $row[4]; //appid
+    $array[$i]["comment"] = $row[5]; //comment
+    $array[$i]["create"] = $row[6]; //create
+    $array[$i]["update"] = $row[7]; //update
+    $i++;
+}
 //
 // $result_count = mysql_query($sql_all_count, $con);
 // $row_count = mysql_fetch_array($result_count)
