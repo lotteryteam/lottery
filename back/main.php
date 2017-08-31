@@ -35,7 +35,17 @@ include 'conn.php';
 // }
 
 echo "jjj";
-echo $_GET['limit'];
+$limit = $_GET['limit'];
+$offset = $_GET['offset'];
+$start = $offset * $limit;
+$sql = "select * from lottery limit $offset,$limit";
+$sql_all_count = "select count(*) from lottery";
+$result = mysql_query($sql, $con);
+$array = new ArrayObject(new ArrayObject());
+$i = 0;
+
+echo $limit;
+echo $offset;
 
 // if (isset($_GET["limit"]) && isset($_GET["offset"])) {
 //   echo "kkk";
