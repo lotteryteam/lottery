@@ -62,7 +62,7 @@ $result_count = mysql_query($sql_all_count, $con);
 $row_count = mysql_fetch_array($result_count)
 $all_count = $row_count[0];
 
-$json = array("total" => $all_count, "rows" => $array);
+// $json = array("total" => $all_count, "rows" => $array);
 // echo json_encode($json)
 
 // if (isset($_GET["limit"]) && isset($_GET["offset"])) {
