@@ -65,7 +65,7 @@ echo $row_count[0];
 //
 // $json = array("total" => $row_count[0], "rows" => $array);
 // echo json_encode($json)
-print_r($array)
+print_r($array);
 
 // if (isset($_GET["limit"]) && isset($_GET["offset"])) {
 //   echo "kkk";
