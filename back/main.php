@@ -38,7 +38,7 @@ echo "jjj";
 $limit = $_GET['limit'];
 $offset = $_GET['offset'];
 $start = $offset * $limit;
-$sql = "select * from lottery limit $offset,$limit";
+$sql = "select * from lottery limit $start,$limit";
 $sql_all_count = "select count(*) from lottery";
 $result = mysql_query($sql, $con);
 $array = new ArrayObject(new ArrayObject());
