@@ -68,5 +68,5 @@ if (isset($_GET["limit"]) && isset($_GET["offset"])) {
   $json = array("total" => $all_count, "rows" => $array);
   echo json_encode($json)
 } else {
-   echo json_encode(-1);
+   echo "111";
 }
