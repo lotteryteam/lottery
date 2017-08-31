@@ -34,7 +34,7 @@ include 'conn.php';
 //     echo json_encode(0);
 // }
 
-echo "jjj";
+// echo "jjj";
 $limit = $_GET['limit'];
 $offset = $_GET['offset'];
 $start = $offset * $limit;
@@ -43,8 +43,8 @@ $sql_all_count = "select count(*) from lottery";
 $result = mysql_query($sql, $con);
 $array = new ArrayObject(new ArrayObject());
 $i = 0;
-
-echo $sql;
+// 
+// echo $sql;
 
 while($row = mysql_fetch_array($result)){
     $array[$i]["id"] = $row[0]; //id
