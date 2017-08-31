@@ -35,15 +35,15 @@ include 'conn.php';
 // }
 
 // echo "jjj";
-$limit = $_GET['limit'];
-$offset = $_GET['offset'];
+$limit = $_POST['limit'];
+$offset = $_POST['offset'];
 $start = $offset * $limit;
 $sql = "select * from lottery limit $start,$limit";
 $sql_all_count = "select count(*) from lottery";
 $result = mysql_query($sql, $con);
 $array = new ArrayObject(new ArrayObject());
 $i = 0;
-// 
+//
 // echo $sql;
 
 while($row = mysql_fetch_array($result)){
@@ -67,10 +67,10 @@ $json = array("total" => $row_count[0], "rows" => $array);
 echo json_encode($json);
 // print_r($json);
 
-// if (isset($_GET["limit"]) && isset($_GET["offset"])) {
+// if (isset($_POST["limit"]) && isset($_POST["offset"])) {
 //   echo "kkk";
-//   $limit = $_GET['limit'];
-//   $offset = $_GET['offset'];
+//   $limit = $_POST['limit'];
+//   $offset = $_POST['offset'];
 //   $start = $offset * $limit;
 //   $sql = "select * from lottery limit $offset,$limit";
 //   $sql_all_count = "select count(*) from lottery";
