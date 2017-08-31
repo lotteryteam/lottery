@@ -44,24 +44,26 @@ $result = mysql_query($sql, $con);
 $array = new ArrayObject(new ArrayObject());
 $i = 0;
 
-while($row = mysql_fetch_array($result)){
-    $array[$i]["id"] = $row[0]; //id
-    $array[$i]["url"] = $row[1]; //url
-    $array[$i]["type"] = $row[2]; //type
-    $array[$i]["show_url"] = $row[3]; //show_url
-    $array[$i]["appid"] = $row[4]; //appid
-    $array[$i]["comment"] = $row[5]; //comment
-    $array[$i]["create"] = $row[6]; //create
-    $array[$i]["update"] = $row[7]; //update
-    $i++;
-}
+echo $sql;
 
-$result_count = mysql_query($sql_all_count, $con);
-$row_count = mysql_fetch_array($result_count)
-$all_count = $row_count[0];
-
-$json = array("total" => $all_count, "rows" => $array);
-echo json_encode($json)
+// while($row = mysql_fetch_array($result)){
+//     $array[$i]["id"] = $row[0]; //id
+//     $array[$i]["url"] = $row[1]; //url
+//     $array[$i]["type"] = $row[2]; //type
+//     $array[$i]["show_url"] = $row[3]; //show_url
+//     $array[$i]["appid"] = $row[4]; //appid
+//     $array[$i]["comment"] = $row[5]; //comment
+//     $array[$i]["create"] = $row[6]; //create
+//     $array[$i]["update"] = $row[7]; //update
+//     $i++;
+// }
+//
+// $result_count = mysql_query($sql_all_count, $con);
+// $row_count = mysql_fetch_array($result_count)
+// $all_count = $row_count[0];
+//
+// $json = array("total" => $all_count, "rows" => $array);
+// echo json_encode($json)
 
 // if (isset($_GET["limit"]) && isset($_GET["offset"])) {
 //   echo "kkk";
