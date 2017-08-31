@@ -27,9 +27,9 @@ include 'conn.php';
 $admin = true;
 
 if($admin == true){
-    if (isset($_POST['limit']) && isset($_POST['offset']))) {
-      $limit = $_POST['limit'];
-      $offset = $_POST['offset'];
+    if (isset($_GET['limit']) && isset($_GET['offset']))) {
+      $limit = $_GET['limit'];
+      $offset = $_GET['offset'];
       $start = $offset * $limit;
       $sql = "select * from lottery limit $offset,$limit";
       $sql_all_count = "select count(*) from lottery";
