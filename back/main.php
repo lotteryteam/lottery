@@ -34,6 +34,7 @@ include 'conn.php';
 // }
 
 echo "jjj";
+echo $_GET['limit'];
 
 if (isset($_GET["limit"]) && isset($_GET["offset"])) {
   echo "kkk";
