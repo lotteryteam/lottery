@@ -327,7 +327,7 @@ var TableInit = function() {
 		};
 		var json = JSON.stringify(temp);
 		console.log(json);
-		return json;
+		return temp;
 	};
 	return oTableInit;
 };
